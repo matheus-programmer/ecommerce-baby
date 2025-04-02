@@ -7,7 +7,7 @@ export default function Navbar() {
                 <Link href="/" className="navbar-brand">
                     <h1 className="h4 mb-0">E-commerce Baby</h1>
                 </Link>
-                <div className="d-flex">
+                <div className="d-flex gap-3">
                     <Link href="/produtos" className="nav-link text-white">
                         Produtos
                     </Link>
