@@ -10,11 +10,13 @@ export default function Produtos() {
     }, []);
 
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold text-center my-6">Produtos</h1>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="container p-4">
+            <h1 className="h2 fw-bold text-center my-4">Produtos</h1>
+            <div className="row g-4">
                 {products.map((product) => (
-                    <ProductCard key={product.objectId} product={product} />
+                    <div key={product.objectId} className="col-12 col-md-4">
+                        <ProductCard product={product} />
+                    </div>
                 ))}
             </div>
         </div>

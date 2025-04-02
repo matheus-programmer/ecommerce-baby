@@ -41,23 +41,23 @@ export default function Cadastro() {
     };
 
     return (
-        <div className="container mx-auto p-4 flex justify-center">
-            <div className="w-full max-w-md">
-                <h1 className="text-2xl font-bold text-center my-6">Cadastre-se</h1>
+        <div className="container d-flex justify-content-center p-4">
+            <div className="w-100" style={{ maxWidth: "400px" }}>
+                <h1 className="h4 text-center my-4">Cadastre-se</h1>
                 
                 {error && (
-                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                    <div className="alert alert-danger" role="alert">
                         {error}
                     </div>
                 )}
                 
-                <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                <form onSubmit={handleSubmit} className="bg-white shadow rounded p-4">
+                    <div className="mb-3">
+                        <label className="form-label" htmlFor="name">
                             Nome Completo
                         </label>
                         <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="form-control"
                             id="name"
                             type="text"
                             name="name"
@@ -67,12 +67,12 @@ export default function Cadastro() {
                         />
                     </div>
                     
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                    <div className="mb-3">
+                        <label className="form-label" htmlFor="email">
                             Email
                         </label>
                         <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="form-control"
                             id="email"
                             type="email"
                             name="email"
@@ -82,12 +82,12 @@ export default function Cadastro() {
                         />
                     </div>
                     
-                    <div className="mb-4">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+                    <div className="mb-3">
+                        <label className="form-label" htmlFor="password">
                             Senha
                         </label>
                         <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                            className="form-control"
                             id="password"
                             type="password"
                             name="password"
@@ -95,15 +95,15 @@ export default function Cadastro() {
                             onChange={handleChange}
                             required
                         />
-                        <p className="text-xs text-gray-500">Mínimo de 6 caracteres</p>
+                        <small className="form-text text-muted">Mínimo de 6 caracteres</small>
                     </div>
                     
-                    <div className="mb-6">
-                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirmPassword">
+                    <div className="mb-3">
+                        <label className="form-label" htmlFor="confirmPassword">
                             Confirmar Senha
                         </label>
                         <input
-                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            className="form-control"
                             id="confirmPassword"
                             type="password"
                             name="confirmPassword"
@@ -113,19 +113,19 @@ export default function Cadastro() {
                         />
                     </div>
                     
-                    <div className="flex items-center justify-between">
+                    <div className="d-grid">
                         <button
-                            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+                            className="btn btn-primary"
                             type="submit"
                         >
                             Cadastrar
                         </button>
                     </div>
                     
-                    <div className="text-center mt-6">
-                        <p className="text-sm">
+                    <div className="text-center mt-3">
+                        <p className="small">
                             Já tem uma conta?{" "}
-                            <Link href="/login" className="text-blue-500 hover:text-blue-800">
+                            <Link href="/login" className="text-primary">
                                 Faça login
                             </Link>
                         </p>

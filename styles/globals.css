@@ -1,12 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 :root {
-  --primary: #3b82f6;
-  --primary-dark: #2563eb;
-  --secondary: #10b981;
-  --secondary-dark: #059669;
+  --bs-primary: #3b82f6;
+  --bs-primary-dark: #2563eb;
+  --bs-secondary: #10b981;
+  --bs-secondary-dark: #059669;
 }
 
 html,
@@ -23,21 +21,33 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .container {
   min-height: calc(100vh - 136px); /* Altura da tela menos altura do navbar e footer */
 }
 
 /* Estilos personalizados para botões */
 .btn-primary {
-  @apply bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition;
+  background-color: var(--bs-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: var(--bs-primary-dark);
 }
 
 .btn-secondary {
-  @apply bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition;
+  background-color: var(--bs-secondary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bs-secondary-dark);
 }
 
 /* Animações */
@@ -52,12 +62,4 @@ a {
 
 .fade-in {
   animation: fadeIn 0.5s ease-in;
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 }

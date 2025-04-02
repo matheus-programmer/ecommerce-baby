@@ -5,7 +5,7 @@ Este repositório contém o código-fonte do frontend do e-commerce de produtos 
 ## 🚀 Tecnologias Utilizadas
 - **Next.js** - Framework React para aplicações web.
 - **Axios** - Para consumo da API do backend (Back4App).
-- **Tailwind CSS** - Para estilização moderna e responsiva.
+- **Bootstrap** - Para estilização moderna e responsiva.
 - **React Hooks** - Gerenciamento de estado e efeitos.
 
 ## 📂 Estrutura do Projeto

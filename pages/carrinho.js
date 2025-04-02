@@ -7,7 +7,6 @@ export default function Carrinho() {
     const { cart, removeFromCart } = useCart();
     const [quantities, setQuantities] = useState({});
 
-    // Inicializa as quantidades se ainda não existirem
     if (cart.length > 0 && Object.keys(quantities).length === 0) {
         const initialQuantities = {};
         cart.forEach(item => {
@@ -32,7 +31,6 @@ export default function Carrinho() {
 
     const handleRemove = (id) => {
         removeFromCart(id);
-        // Também remove da quantidade
         const newQuantities = { ...quantities };
         delete newQuantities[id];
         setQuantities(newQuantities);
@@ -40,67 +38,49 @@ export default function Carrinho() {
 
     if (cart.length === 0) {
         return (
-            <div className="container mx-auto p-4 min-h-screen">
-                <h1 className="text-2xl font-bold text-center my-6">Seu Carrinho</h1>
-                <div className="text-center">
-                    <p className="mb-4">Seu carrinho está vazio.</p>
-                    <Link href="/produtos">
-                        <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">
-                            Ver Produtos
-                        </button>
-                    </Link>
-                </div>
+            <div className="container p-4 min-vh-100 d-flex flex-column align-items-center justify-content-center">
+                <h1 className="h4 text-center mb-4">Seu Carrinho</h1>
+                <p className="mb-4">Seu carrinho está vazio.</p>
+                <Link href="/produtos">
+                    <button className="btn btn-primary">
+                        Ver Produtos
+                    </button>
+                </Link>
             </div>
         );
     }
 
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold text-center my-6">Seu Carrinho</h1>
+        <div className="container p-4">
+            <h1 className="h4 text-center mb-4">Seu Carrinho</h1>
             
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                <div className="overflow-x-auto">
-                    <table className="min-w-full divide-y divide-gray-200">
-                        <thead className="bg-gray-50">
+            <div className="bg-white rounded shadow-sm">
+                <div className="table-responsive">
+                    <table className="table">
+                        <thead className="table-light">
                             <tr>
-                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Produto
-                                </th>
-                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Preço
-                                </th>
-                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Quantidade
-                                </th>
-                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Subtotal
-                                </th>
-                                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Ações
-                                </th>
+                                <th scope="col">Produto</th>
+                                <th scope="col">Preço</th>
+                                <th scope="col">Quantidade</th>
+                                <th scope="col">Subtotal</th>
+                                <th scope="col">Ações</th>
                             </tr>
                         </thead>
-                        <tbody className="bg-white divide-y divide-gray-200">
+                        <tbody>
                             {cart.map((item) => (
                                 <tr key={item.objectId}>
-                                    <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="flex items-center">
-                                            <div className="flex-shrink-0 h-16 w-16">
-                                                <img className="h-16 w-16 object-cover rounded-md" src={item.image} alt={item.name} />
-                                            </div>
-                                            <div className="ml-4">
-                                                <div className="text-sm font-medium text-gray-900">{item.name}</div>
-                                            </div>
+                                    <td>
+                                        <div className="d-flex align-items-center">
+                                            <img className="img-thumbnail me-3" src={item.image} alt={item.name} style={{ width: "64px", height: "64px" }} />
+                                            <span>{item.name}</span>
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="text-sm text-gray-900">{formatPrice(item.price)}</div>
-                                    </td>
-                                    <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="flex items-center">
+                                    <td>{formatPrice(item.price)}</td>
+                                    <td>
+                                        <div className="input-group">
                                             <button 
                                                 onClick={() => updateQuantity(item.objectId, (quantities[item.objectId] || 1) - 1)}
-                                                className="bg-gray-200 px-2 py-1 rounded-l"
+                                                className="btn btn-outline-secondary"
                                             >
                                                 -
                                             </button>
@@ -109,23 +89,21 @@ export default function Carrinho() {
                                                 min="1"
                                                 value={quantities[item.objectId] || 1}
                                                 onChange={(e) => updateQuantity(item.objectId, parseInt(e.target.value) || 1)}
-                                                className="w-12 text-center border-t border-b"
+                                                className="form-control text-center"
                                             />
                                             <button 
                                                 onClick={() => updateQuantity(item.objectId, (quantities[item.objectId] || 1) + 1)}
-                                                className="bg-gray-200 px-2 py-1 rounded-r"
+                                                className="btn btn-outline-secondary"
                                             >
                                                 +
                                             </button>
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                        {formatPrice(item.price * (quantities[item.objectId] || 1))}
-                                    </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <td>{formatPrice(item.price * (quantities[item.objectId] || 1))}</td>
+                                    <td>
                                         <button 
                                             onClick={() => handleRemove(item.objectId)}
-                                            className="text-red-600 hover:text-red-800"
+                                            className="btn btn-danger btn-sm"
                                         >
                                             Remover
                                         </button>
@@ -136,22 +114,22 @@ export default function Carrinho() {
                     </table>
                 </div>
                 
-                <div className="border-t border-gray-200 px-6 py-4">
-                    <div className="flex justify-between items-center">
-                        <div className="text-lg font-bold">Total</div>
-                        <div className="text-xl font-bold">{formatPrice(calculateTotal())}</div>
+                <div className="border-top p-3">
+                    <div className="d-flex justify-content-between">
+                        <span className="fw-bold">Total</span>
+                        <span className="fw-bold">{formatPrice(calculateTotal())}</span>
                     </div>
                 </div>
             </div>
             
-            <div className="mt-6 flex justify-between">
+            <div className="mt-4 d-flex justify-content-between">
                 <Link href="/produtos">
-                    <button className="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition">
+                    <button className="btn btn-secondary">
                         Continuar Comprando
                     </button>
                 </Link>
                 <Link href="/checkout">
-                    <button className="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition">
+                    <button className="btn btn-success">
                         Finalizar Compra
                     </button>
                 </Link>

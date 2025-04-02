@@ -1,7 +1,8 @@
+import "bootstrap/dist/css/bootstrap.min.css"; // Importa o CSS do Bootstrap
+import "../styles/globals.css"; // Importa os estilos globais
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { CartProvider } from "../context/CartContext";
-import "../styles/globals.css";
 
 export default function MyApp({ Component, pageProps }) {
     return (
