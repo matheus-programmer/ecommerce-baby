@@ -1,0 +1,31 @@
+### Node Modules e Dependências
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+### Configurações do Ambiente
+.env
+.env.local
+.env.development
+.env.production
+
+### Build e Arquivos Temporários
+.next/
+out/
+dist/
+.cache/
+.DS_Store
+
+### Logs e Relatórios
+logs/
+*.log
+*.gz
+coverage/
+
+### Vercel e Deploy
+.vercel
+.vscode
+.idea/
+
