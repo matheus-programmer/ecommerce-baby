@@ -54,7 +54,7 @@ export default function Carrinho() {
         <div className="container p-4">
             <h1 className="h4 text-center mb-4">Seu Carrinho</h1>
             
-            <div className="bg-white rounded shadow-sm">
+            <div className="bg-white border rounded shadow-sm p-4">
                 <div className="table-responsive">
                     <table className="table">
                         <thead className="table-light">

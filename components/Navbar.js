@@ -17,6 +17,9 @@ export default function Navbar() {
                     <Link href="/contato" className="nav-link text-white">
                         Contato
                     </Link>
+                    <Link href="/login" className="nav-link text-white">
+                        Login
+                    </Link>
                 </div>
             </div>
         </nav>
