@@ -34,7 +34,7 @@ export default function Checkout() {
                 <h1 className="h4 mb-4">Checkout</h1>
                 <p>Seu carrinho está vazio.</p>
                 <button 
-                    onClick={() => router.push("/produtos")}
+                    onClick={() => router.push("/produto/produtos")}
                     className="btn btn-primary mt-3"
                 >
                     Ver Produtos

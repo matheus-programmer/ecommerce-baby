@@ -14,7 +14,7 @@ export default function Home() {
                 />
             </div>
             <div className="d-flex justify-content-center mt-4">
-                <Link href="/produtos">
+                <Link href="/produto/produtos">
                     <button className="btn btn-primary px-4 py-2">
                         Ver Produtos
                     </button>

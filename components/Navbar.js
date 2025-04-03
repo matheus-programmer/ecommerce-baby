@@ -20,7 +20,7 @@ export default function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <div className="navbar-nav ms-auto gap-3">
-                        <Link href="/produtos" className="nav-link text-white">
+                        <Link href="/produto/produtos" className="nav-link text-white">
                             Produtos
                         </Link>
                         <Link href="/carrinho" className="nav-link text-white">

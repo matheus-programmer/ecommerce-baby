@@ -41,7 +41,7 @@ export default function Carrinho() {
             <div className="container p-4 min-vh-100 d-flex flex-column align-items-center justify-content-center">
                 <h1 className="h4 text-center mb-4">Seu Carrinho</h1>
                 <p className="mb-4">Seu carrinho está vazio.</p>
-                <Link href="/produtos">
+                <Link href="/produto/produtos">
                     <button className="btn btn-primary">
                         Ver Produtos
                     </button>
