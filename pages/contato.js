@@ -5,7 +5,7 @@ export default function Contato() {
             <p className="text-center">Fale conosco pelo WhatsApp:</p>
             <div className="d-flex justify-content-center mt-4">
                 <a
-                    href="https://wa.me/SEU_NUMERO"
+                    href="https://wa.me/+5585992795965"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-success px-4 py-2"
