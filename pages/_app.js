@@ -1,5 +1,6 @@
-import "bootstrap/dist/css/bootstrap.min.css"; // Importa o CSS do Bootstrap
-import "../styles/globals.css"; // Importa os estilos globais
+import "bootstrap/dist/css/bootstrap.min.css"; // CSS do Bootstrap
+import "bootstrap/dist/js/bootstrap.bundle.min.js"; // JavaScript do Bootstrap
+import "../styles/globals.css"; // Seus estilos globais
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { CartProvider } from "../context/CartContext";
