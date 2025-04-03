@@ -30,7 +30,7 @@ export default function Checkout() {
 
     if (cart.length === 0) {
         return (
-            <div className="container p-4 text-center">
+            <div className="container p-4 text-center min-vh-100 d-flex flex-column justify-content-center align-items-center">
                 <h1 className="h4 mb-4">Checkout</h1>
                 <p>Seu carrinho está vazio.</p>
                 <button 

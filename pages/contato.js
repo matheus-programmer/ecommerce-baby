@@ -1,7 +1,7 @@
 export default function Contato() {
     return (
-        <div className="container p-4">
-            <h1 className="h4 fw-bold text-center my-4">Contato</h1>
+        <div className="container p-4 min-vh-100 d-flex flex-column justify-content-center align-items-center">
+            <h1 className="h4 fw-bold text-center mb-4">Contato</h1>
             <p className="text-center">Fale conosco pelo WhatsApp:</p>
             <div className="d-flex justify-content-center mt-4">
                 <a

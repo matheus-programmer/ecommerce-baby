@@ -41,7 +41,7 @@ export default function Cadastro() {
     };
 
     return (
-        <div className="container d-flex justify-content-center p-4">
+        <div className="container d-flex justify-content-center align-items-center p-4" style={{ minHeight: "100vh" }}>
             <div className="w-100" style={{ maxWidth: "400px" }}>
                 <h1 className="h4 text-center my-4">Cadastre-se</h1>
                 

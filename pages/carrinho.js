@@ -122,7 +122,7 @@ export default function Carrinho() {
                 </div>
             </div>
             
-            <div className="mt-4 d-flex justify-content-between">
+            <div className="mt-4 d-flex justify-content-between flex-wrap gap-3">
                 <Link href="/produtos">
                     <button className="btn btn-secondary">
                         Continuar Comprando

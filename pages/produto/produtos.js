@@ -12,9 +12,9 @@ export default function Produtos() {
     return (
         <div className="container p-4">
             <h1 className="h2 fw-bold text-center my-4">Produtos</h1>
-            <div className="row g-4">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                 {products.map((product) => (
-                    <div key={product.objectId} className="col-12 col-md-4">
+                    <div key={product.objectId} className="col">
                         <ProductCard product={product} />
                     </div>
                 ))}

@@ -4,30 +4,41 @@
  * @returns {string} Preço formatado
  */
 export function formatPrice(price) {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
-    }).format(price);
+  if (typeof price !== "number" || isNaN(price)) {
+      console.error("O valor fornecido para formatPrice não é um número válido:", price);
+      return "R$ 0,00";
   }
-  
-  /**
-   * Calcula o preço com desconto
-   * @param {number} price - Preço original
-   * @param {number} discountPercentage - Percentual de desconto
-   * @returns {number} Preço com desconto aplicado
-   */
-  export function calculateDiscountPrice(price, discountPercentage) {
-    if (!price || !discountPercentage) return price;
-    return price - (price * (discountPercentage / 100));
+  return new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+  }).format(price);
+}
+
+/**
+* Calcula o preço com desconto
+* @param {number} price - Preço original
+* @param {number} discountPercentage - Percentual de desconto
+* @returns {number} Preço com desconto aplicado
+*/
+export function calculateDiscountPrice(price, discountPercentage) {
+  if (typeof price !== "number" || typeof discountPercentage !== "number") {
+      console.error("Os valores fornecidos para calculateDiscountPrice não são números válidos:", {
+          price,
+          discountPercentage,
+      });
+      return price;
   }
-  
-  /**
-   * Formata o preço com desconto
-   * @param {number} price - Preço original
-   * @param {number} discountPercentage - Percentual de desconto
-   * @returns {string} Preço com desconto formatado
-   */
-  export function formatDiscountPrice(price, discountPercentage) {
-    const discountedPrice = calculateDiscountPrice(price, discountPercentage);
-    return formatPrice(discountedPrice);
-  }
+  if (!price || !discountPercentage || discountPercentage <= 0) return price;
+  return price - price * (discountPercentage / 100);
+}
+
+/**
+* Formata o preço com desconto
+* @param {number} price - Preço original
+* @param {number} discountPercentage - Percentual de desconto
+* @returns {string} Preço com desconto formatado
+*/
+export function formatDiscountPrice(price, discountPercentage) {
+  const discountedPrice = calculateDiscountPrice(price, discountPercentage);
+  return formatPrice(discountedPrice);
+}

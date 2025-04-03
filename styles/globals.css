@@ -1,5 +1,9 @@
+/* Importação do Bootstrap */
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+/* ========================= */
+/* Variáveis de cores        */
+/* ========================= */
 :root {
   --bs-primary: #3b82f6;
   --bs-primary-dark: #2563eb;
@@ -7,6 +11,9 @@
   --bs-secondary-dark: #059669;
 }
 
+/* ========================= */
+/* Reset e estilos globais   */
+/* ========================= */
 html,
 body {
   padding: 0;
@@ -25,7 +32,11 @@ a {
   min-height: calc(100vh - 136px); /* Altura da tela menos altura do navbar e footer */
 }
 
-/* Estilos personalizados para botões */
+/* ========================= */
+/* Estilos personalizados    */
+/* ========================= */
+
+/* Botões */
 .btn-primary {
   background-color: var(--bs-primary);
   color: white;
@@ -50,7 +61,9 @@ a {
   background-color: var(--bs-secondary-dark);
 }
 
-/* Animações */
+/* ========================= */
+/* Animações                 */
+/* ========================= */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -62,4 +75,39 @@ a {
 
 .fade-in {
   animation: fadeIn 0.5s ease-in;
+}
+
+/* ========================= */
+/* Classes utilitárias       */
+/* ========================= */
+
+/* Margens */
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Padding */
+.p-4 {
+  padding: 1.5rem !important;
+}
+
+/* Centralização */
+.text-center {
+  text-align: center !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.align-items-center {
+  align-items: center !important;
 }

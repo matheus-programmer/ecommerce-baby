@@ -2,8 +2,8 @@ import axios from "axios";
 
 const API_BASE_URL = "https://parseapi.back4app.com/functions";
 const HEADERS = {
-    "X-Parse-Application-Id": "7sAe2Ryb4emHOnkS5O92JKV72oTBp1qEX27v4Xjy",
-    "X-Parse-REST-API-Key": "3ibwGF8b5dzAeBcZddaN2yQZt4o2un7lK1Vkzv8s"
+    "X-Parse-Application-Id": process.env.NEXT_PUBLIC_PARSE_APPLICATION_ID,
+    "X-Parse-REST-API-Key": process.env.NEXT_PUBLIC_PARSE_REST_API_KEY,
 };
 
 // Função para buscar produtos

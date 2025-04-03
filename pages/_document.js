@@ -21,8 +21,10 @@ export default function Document() {
         <meta property="og:url" content="https://ecommerce-baby.vercel.app" />
         <meta property="og:image" content="https://ecommerce-baby.vercel.app/og-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
+        {/* Viewport para responsividade */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <body>
+      <body className="bg-light">
         <Main />
         <NextScript />
       </body>
